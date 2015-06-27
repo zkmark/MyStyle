@@ -1,0 +1,95 @@
+body{
+	background: $black-5;
+}
+.container{
+		background: $white;
+		margin     : 0 auto;
+		margin-top: 1em;
+		box-sizing: border-box;
+		width: 96%;
+	}
+
+	// Vars
+		$row--max-width : 1400px;
+		$col--separation : 0px;
+	//for grids
+		$breakpoints: (
+            base   : 320px,
+			movil  : 480px,
+			tablet : 768px,
+			web    : 1025px,
+			hd     : 1400px
+        );
+
+		$fractions: (
+			thirds : 3
+        );
+
+.row {
+	position   : relative;
+	max-width  : $row--max-width;
+	margin     : 0 auto;
+    width      : 100%;
+    
+
+	&.all {
+		max-width : 100% !important;
+	}
+
+	&:before, &:after {
+		content : "";
+		display : table;
+		width   : 100%;
+		clear   : both;
+	}
+
+	.col {
+		float         : left;
+		margin        : 0;
+		padding-left  : ($col--separation / 2);
+		padding-right : ($col--separation / 2);
+        width         : 100%;
+        // For the borders
+        box-sizing: border-box;
+		
+		/*&:last-child{
+			float : right;
+		}*/
+	}
+
+	.col.all {
+		float   : none;
+		width   : 100%;
+
+		&:before, &:after {
+			content : "";
+			display : table;
+			width   : 100%;
+			clear   : both;
+		}
+	}
+}
+
+
+// Breakpoints
+@each $size, $screen-size in $breakpoints{
+	
+	@media all and (min-width: $screen-size){
+		
+		@for $i from 1 through 20 {
+			.#{$size}-#{$i*5},
+            .row .col.#{$size}-#{$i*5}{
+				width: unquote($i*5 + "%");
+			}
+		}
+		/* fractions*/
+		@each $fraccion-nombre, $fraccion in $fractions{
+			@for $i from 1 through $fraccion{
+				.#{$size}-#{$i}-#{$fraccion},
+                .row .col.#{$size}-#{$i}-#{$fraccion}{
+					width: (100% / $fraccion) * $i; 
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+
+
+//libs
+@import "libs/resets";
+@import "libs/normalize";
+
+//Variables
+@import "vars/colors";
+
+//Theme
+//@import "theme/mixins";
+@import "theme/icons";
+@import "theme/nav";
+@import "theme/waves";
+@import "theme/grids";
+@import "theme/utilitties";
+
+.title{
+	text-align: center;
+	color: $blue-700;
+	padding: 1.2em 1em .5em 1em;
+	font-size: 2.5em;
+}
+
+.borders {
+	div{
+		border: 2px solid $blue-600;
+		background: $blue-400;
+		text-align: center;
+		color: white;
+		font-size: 1.5em;
+		line-height: 1.5em;
+	}
+}
+

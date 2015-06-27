@@ -1,0 +1,84 @@
+doctype html
+html(lang="es")
+	head
+		title 
+		meta(charset="utf-8")
+		meta(name="viewport",content="width=device-width,initial-scale=1,maximun-scale=1")
+		link(rel="stylesheet", href="css/style.css")
+		//link(href="https://fontastic.s3.amazonaws.com/m7Ks5bQTaDueGroFyLJGhg/icons.css" rel="stylesheet")
+	body
+		header
+			nav
+				.logo
+					h1 Material Menu
+				.icon-menu.waves#show-menu 
+					span Menu
+				ul.menu-list.center
+					li.waves: a(href="") Home
+					li.waves: a(href="") Material
+					li.waves: a(href="") About
+					li.waves: a(href="") Contact
+		.container
+			h2.title Grids Responsive
+			.row.borders
+				.col.base-1-3
+					|.col.base-1-3
+				.col.base-1-3
+					|.col.base-1-3
+				.col.base-1-3
+					|.col.base-1-3
+			.row.borders
+				.col.base-100
+					|.col.base-100
+				.col.base-50.movil-50.tablet-50.web-50.hd-50
+					|.col.base-50.
+				.col.base-50.movil-50.tablet-50.web-50.hd-50
+					|.col.base-50.
+				.col.base-25.movil-25.tablet-25.web-25.hd-25
+					|.col.base-25
+				.col.base-25.movil-25.tablet-25.web-25.hd-25
+					|.col.base-25
+				.col.base-25.movil-25.tablet-25.web-25.hd-25
+					|.col.base-25
+				.col.base-25.movil-25.tablet-25.web-25.hd-25
+					|.col.base-25
+			.row.borders
+				-var $black= ".base-", black= "base-"
+				-for (i = 100; i > 0; i-=5)
+					div(class=black+[i])=$black+[i]
+			h2.title Utilities
+			h3.title .center .right .left
+			.row.borders
+				.col.base-100.center
+					|.center
+				.col.base-100.right
+					|.right	
+				.col.base-100.left
+					|.left
+			.center
+				h3.title .responsive-img and .responsive-video
+				img(src="image.jpg").responsive-img
+				h3.title .circle
+				img(src="image.jpg").circle.responsive-img
+			h2.title Shadow and hover
+			.row.borders
+				.col.base-15.shadow-1.mr
+					|.shadow-1
+				.col.base-15.shadow-2.mr
+					|.shadow-2
+				.col.base-15.shadow-3.mr
+					|.shadow-3
+				.col.base-15.shadow-4.mr
+					|.shadow-4
+				.col.base-15.shadow-5
+					|.shadow-5
+			</br>
+			</br>
+			.row.borders
+				.col.base-100.hover
+					|.hover
+			h2.title Shadow
+
+
+		script(src="js/jquery-2.1.4.min.js")
+		script(src="js/nav.js")
